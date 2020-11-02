@@ -56,18 +56,16 @@ namespace task_management.Controllers
         }
 
         [HttpPut]
-        public ActionResult Edit(int id, Comment requestArticle)
+        public ActionResult Edit(int id, Comment requestComment)
         {
             try
             {
                 Comment comment = db.Comments.Find(id);
                 if (TryUpdateModel(comment))
                 {
-                    /*article.Title = requestArticle.Title;
-                    article.Content = requestArticle.Content;
-                    article.Date = requestArticle.Date;
-                    article.CategoryId = requestArticle.CategoryId;
-                    db.SaveChanges();*/
+                    comment.Content = requestComment.Content;
+                    comment.Date = requestComment.Date;
+                    db.SaveChanges();
                 }
                 return RedirectToAction("Index");
             }

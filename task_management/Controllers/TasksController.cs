@@ -55,18 +55,19 @@ namespace task_management.Controllers
         }
 
         [HttpPut]
-        public ActionResult Edit(int id, Task requestTeam)
+        public ActionResult Edit(int id, Task requestTask)
         {
             try
             {
                 Task task = db.Tasks.Find(id);
                 if (TryUpdateModel(task))
                 {
-                    /*article.Title = requestArticle.Title;
-                    article.Content = requestArticle.Content;
-                    article.Date = requestArticle.Date;
-                    article.CategoryId = requestArticle.CategoryId;
-                    db.SaveChanges();*/
+                    task.Title = requestTask.Title;
+                    task.Content = requestTask.Content;
+                    task.StartDate = requestTask.StartDate;
+                    task.EndDate = requestTask.EndDate;
+                    task.Status = requestTask.Status;
+                    db.SaveChanges();
                 }
                 return RedirectToAction("Index");
             }
