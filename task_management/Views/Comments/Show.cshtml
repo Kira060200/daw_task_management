@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+<h1>Afisare comentariu</h1>
+<p>@ViewBag.Comment.Content</p><p>@ViewBag.Comment.Date</p>
+<a href="/Comments/Edit/@ViewBag.Comment.CommentId">Modifica comentariu</a>
+<form method="post" action="/Categories/Delete/@ViewBag.Comment.CommentId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button type="submit">Sterge comentariu</button>
+</form>
+<hr />
+<a href="/Comments/Index">Inapoi la comentarii</a>
+<br />
+<a href="/Comments/New">Adauga comentariu</a>
+<br />
+
+
+

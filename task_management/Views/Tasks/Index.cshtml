@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Afisare task-uri</h2>
+
+@foreach (var task in ViewBag.Tasks)
+{
+    <h1>@task.Title</h1>
+    <p>@task.Content</p>
+    <p>@task.StartDate</p>
+    <p>@task.EndDate</p>
+    <p>@task.Status</p>
+    <a href="/Articles/Show/@task.TaskId">Afisare task</a>
+    <br />
+    <hr />
+    <br />
+}
+
+
+<a href="/Tasks/New">Adauga task</a>
+<br />

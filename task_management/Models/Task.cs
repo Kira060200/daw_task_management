@@ -20,5 +20,7 @@ namespace task_management.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
+        public virtual ICollection<Comment> Comments { get; set; }
+        //De verificat daca am implementat bine key si ICollection
     }
 }

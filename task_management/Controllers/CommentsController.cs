@@ -8,10 +8,11 @@ namespace task_management.Controllers
 {
     public class CommentsController : Controller
     {
+        //Trebuie realizata legatura de db
         // GET: Comments
         public ActionResult Index()
         {
-            var comments = db.Comments.Include("Task");
+            var comments = db.Comments;
             ViewBag.Comments = comments;
             return View();
         }
@@ -40,7 +41,7 @@ namespace task_management.Controllers
         {
             Comment comment = db.Comments.Find(id);
             ViewBag.Comment = comment;
-            ViewBag.Category = comment.Category;
+            ViewBag.Task = comment.Task;
             return View();
         }
 

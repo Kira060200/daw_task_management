@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+<h2>Adaugare task now</h2>
+<form method="post" action="/Tasks/New">
+    <label>Titlu task</label>
+    <input type="text" name="Title" />
+    <br />
+    <label>Descriere task</label>
+<textarea name="Content"></textarea>
+    <br /> <input type="hidden" name="StartDate" value="@DateTime.Now" />
+    <br />
+    <label>Deadline task</label>
+    <br /> <input type="datetime" name="EndDate" />
+    <br />
+    <label>Status task</label>
+<textarea name="Status"></textarea>
+    <br />
+    <button type="submit">Adauga task</button>
+</form>

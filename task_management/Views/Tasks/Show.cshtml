@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+<h1>Afisare task</h1>
+<h2>@ViewBag.Task.Title</h2> <p>@ViewBag.Task.Content</p> <p>@ViewBag.Task.StartDate</p><p>@ViewBag.Task.EndDate</p><p>@ViewBag.Task.Status</p>
+
+<a href="/Tasks/Edit/@ViewBag.Task.TaskId">Modifica task</a>
+<form method="post" action="/Tasks/Delete/@ViewBag.Task.TaskId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button type="submit">Sterge task</button>
+</form>
+<hr />
+<a href="/Tasks/Index">Inapoi la task-uri</a>
+<br />
+<a href="/Tasks/New">Adauga task</a>
+<br />
+

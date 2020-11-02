@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<form method="post" action="/Tasks/Edit/@ViewBag.Task.TaskId">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <label>Titlu task</label>
+    <br /> <input type="text" name="Title" value="@ViewBag.Task.Title" />
+    <br /><br />
+    <label>Descriere task</label>
+    <br /> <input type="text" name="Content" value="@ViewBag.Task.Content" />
+    <br /><br />
+    <label>Data start</label>
+    <br /> <input type="text" name="Date" value="@ViewBag.Task.StartDate" />
+    <br />
+    <label>Data final</label>
+    <br /> <input type="text" name="Date" value="@ViewBag.Task.EndDate" />
+    <br />
+    <label>Status</label>
+    <br /> <input type="text" name="Date" value="@ViewBag.Task.Status" />
+    <br />
+    <button type="submit">Modifica task</button>
+</form>

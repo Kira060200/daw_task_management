@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Afisare comentarii</h2>
+
+@foreach (var comment in ViewBag.Comments)
+{
+    <p>@comment.CommentId</p>
+    <p>@comment.Content</p>
+    <a href="/Categories/Show/@comment.CommentId">Afisare comentariu</a>
+    <br />
+    <hr />
+    <br />
+}
+
+
+<a href="/Tasks/Index/">Afisare lista task-uri</a>
+<br />
+
+
+<a href="/Comments/New">Adauga comentariu</a>
+<br />
+

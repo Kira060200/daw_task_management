@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+<h2>Adaugare comentariu nou</h2>
+<form method="post" action="/Comments/New">
+    <label>Comentariu</label>
+<textarea name="Content"></textarea>
+    <br /> <input type="hidden" name="Date" value="@DateTime.Now" />
+    <br />
+    <button type="submit">Adauga comentariu</button>
+</form>
+

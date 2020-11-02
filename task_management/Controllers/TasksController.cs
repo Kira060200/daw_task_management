@@ -8,9 +8,10 @@ namespace task_management.Controllers
 {
     public class TasksController : Controller
     {
+        //Trebuie realizata legatura de db
         public ActionResult Index()
         {
-            var tasks = db.Tasks.Include("Team");
+            var tasks = db.Tasks.Include("Comments");
             ViewBag.Tasks = tasks;
             return View();
         }
@@ -37,6 +38,7 @@ namespace task_management.Controllers
 
         public ActionResult Show(int id)
         {
+            //Trebuie sa modific Show.cshtml dupa ce am toate keys ca sa afisam toate comentariile corespunzatoare fiecarui task
             Task task = db.Tasks.Find(id);
             ViewBag.Task = task;
             ViewBag.Team = task.team;

@@ -22,4 +22,5 @@ namespace task_management.Models
 
         public virtual Task Task { get; set; }
     }
+    //De verificat daca am implementat bine legaturile
 }
